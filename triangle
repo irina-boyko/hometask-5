@@ -1,0 +1,22 @@
+function triangle (a, b, c) {
+    let args = [].slice.call(arguments);
+    let sortArgs = args.sort(function compareNumbers(a, b) {
+        return a - b;
+    });
+    if (sortArgs[0]+sortArgs[1]<=sortArgs[2]){
+        return typeOfTriangle = ' не существует'
+    } else {
+        let sumOfSquaresOfSmallestSides = Math.pow(sortArgs[0], 2) + Math.pow(sortArgs[1], 2);
+        let squareOfTheLargestSide = Math.pow(sortArgs[2], 2);
+        if (sumOfSquaresOfSmallestSides === squareOfTheLargestSide) {
+            return typeOfTriangle = ' прямоугольный'
+        }
+        if (sumOfSquaresOfSmallestSides < squareOfTheLargestSide) {
+            return typeOfTriangle = ' тупоугольный'
+        }
+        if (sumOfSquaresOfSmallestSides > squareOfTheLargestSide) {
+            return typeOfTriangle = ' остроугольный'
+        }
+    }
+}
+console.log('Ваш треугольник' + triangle (4, 4, 4));
